@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('payment_method_id')->constrained();
             $table->decimal('amount', 10, 2);
-            $table->string('status');
+            $table->enum('status', ['accepted', 'rejected', 'pending'])->default('pending');
             $table->timestamp('transaction_date');
             $table->timestamps();
             $table->softDeletes();
