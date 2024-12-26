@@ -10,6 +10,7 @@ class Order extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
     public function order_items(){
         return $this->hasMany(OrderItem::class);
     }

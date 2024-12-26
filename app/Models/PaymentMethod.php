@@ -9,6 +9,7 @@ class PaymentMethod extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
     public function payments() {
         return $this->hasMany(Payment::class);
     }

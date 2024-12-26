@@ -9,6 +9,7 @@ class Category extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
     public function products(){
         return $this->hasMany(Product::class);
     }
