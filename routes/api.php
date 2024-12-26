@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,4 +14,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/validate_login', [AuthController::class, 'validateLogin'])->name('validate_login');
 
     Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('users', UserController::class);
 });

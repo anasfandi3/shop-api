@@ -13,8 +13,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-        return CategoriesResource::collection($categories);
+        $categories = CategoriesResource::collection(Category::all());
+        return response()->json(compact('categories'));
     }
 
     public function store(CategoryStoreRequest $request)
